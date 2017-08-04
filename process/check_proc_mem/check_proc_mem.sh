@@ -7,12 +7,13 @@
 ## File: check_proc_mem.sh
 ## Author : Denny <denny@dennyzhang.com>
 ## Description :
+## Read more: https://www.dennyzhang.com/nagois_monitor_process_memory
 ## --
 ##
 ## Link: https://www.dennyzhang.com/nagois_monitor_process_memory
 ##
 ## Created : <2014-10-25>
-## Updated: Time-stamp: <2017-07-21 15:35:23>
+## Updated: Time-stamp: <2017-08-03 22:48:34>
 ##-------------------------------------------------------------------
 if [ "$1" = "-w" ] && [ "$2" -gt "0" ] && \
     [ "$3" = "-c" ] && [ "$4" -gt "0" ]; then

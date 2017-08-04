@@ -7,12 +7,13 @@
 ## File: check_proc_fd.sh
 ## Author : Denny <denny@dennyzhang.com>
 ## Description :
+## Read more: https://www.dennyzhang.com/nagois_monitor_process_fd
 ## --
 ##
 ## Link: http://https://github.com/DennyZhang/check_proc_fd
 ##
 ## Created : <2014-12-17>
-## Updated: Time-stamp: <2016-06-24 15:52:55>
+## Updated: Time-stamp: <2017-08-03 22:48:48>
 ##-------------------------------------------------------------------
 if [ "$1" = "-w" ] && [ "$2" -gt "0" ] && \
     [ "$3" = "-c" ] && [ "$4" -gt "0" ]; then

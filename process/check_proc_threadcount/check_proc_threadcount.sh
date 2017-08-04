@@ -3,10 +3,11 @@
 ## File: check_proc_threadcount.sh
 ## Author : Denny <denny@dennyzhang.com>
 ## Description :
+## Read more: https://www.dennyzhang.com/nagois_threadcount
 ## --
 ##
 ## Created : <2015-02-25>
-## Updated: Time-stamp: <2017-01-12 08:01:32>
+## Updated: Time-stamp: <2017-08-03 22:48:17>
 ##-------------------------------------------------------------------
 if [ "$1" = "-w" ] && [ "$2" -gt "0" ] && \
     [ "$3" = "-c" ] && [ "$4" -gt "0" ]; then
