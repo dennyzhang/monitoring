@@ -11,8 +11,8 @@
 ##    Make sure no same shard(primary, replica) are in the same node, to avoid SPOF
 ## --
 ## Created : <2017-02-24>
-## Updated: Time-stamp: <2017-08-03 22:45:08>
-## Read more: https://www.dennyzhang.com/es_shard/
+## Updated: Time-stamp: <2017-08-16 13:00:09>
+## Read more: https://www.dennyzhang.com/es_shard
 ##-------------------------------------------------------------------
 import argparse
 import requests

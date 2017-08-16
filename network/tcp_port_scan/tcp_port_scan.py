@@ -7,7 +7,7 @@
 ## More reading: https://www.dennyzhang.com/nmap_port_scan
 ## --
 ## Created : <2016-01-15>
-## Updated: Time-stamp: <2017-08-03 23:02:36>
+## Updated: Time-stamp: <2017-08-16 13:00:09>
 ##-------------------------------------------------------------------
 import argparse
 import subprocess
