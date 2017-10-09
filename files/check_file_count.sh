@@ -8,9 +8,10 @@
 ## Author : Denny <contact@dennyzhang.com>
 ## Description : If too many files under a folder, raise an alert.
 ##               This check conform to nagios output format
+## Sample: bash ./check_file_count.sh "/data/staging" 1500 2500
 ## --
 ## Created : <2017-10-09>
-## Updated: Time-stamp: <2017-10-09 17:12:03>
+## Updated: Time-stamp: <2017-10-09 17:21:26>
 ##-------------------------------------------------------------------
 folder_dir=${1?}
 warn_count=${2:-1000}
