@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -e
+#!/usr/bin/env bash
 ##-------------------------------------------------------------------
 ## @copyright 2017 DennyZhang.com
 ## Licensed under MIT 
@@ -8,14 +8,17 @@
 ## Author : Denny <contact@dennyzhang.com>
 ## Description : If too many files under a folder, raise an alert.
 ##               This check conform to nagios output format
-## Sample: bash ./check_file_count.sh "/data/staging" 1500 2500
+## Sample: bash ./check_file_count.sh "/data/staging" 1500 2500 "*.json"
 ## --
 ## Created : <2017-10-09>
-## Updated: Time-stamp: <2017-10-09 17:21:26>
+## Updated: Time-stamp: <2017-10-09 17:49:33>
 ##-------------------------------------------------------------------
+set -e
 folder_dir=${1?}
 warn_count=${2:-1000}
 err_count=${3:-2000}
+# What files to check
+file_name_pattern=${4:-"*"}
 
 EXIT_OK=0
 EXIT_WARN=1
@@ -26,15 +29,18 @@ if [ ! -d "$folder_dir" ]; then
     exit $EXIT_WARN
 fi
 
-file_count=$(ls "$folder_dir" | wc -l)
+file_count=$(find "$folder_dir" -name "$file_name_pattern" | wc -l)
 
-if [ $file_count -gt $err_count ]; then
-    echo "ERROR: $file_count files under $folder_dir. More than $err_count"
+if [ "$file_count" -gt "$err_count" ]; then
+    echo "ERROR: $file_count files($file_name_pattern) under $folder_dir. More than $err_count."
     exit $EXIT_ERR
 else
-    echo "WARNING: $file_count files under $folder_dir. More than $warn_count"
-    exit $EXIT_WARN
+    if [ "$file_count" -gt "$warn_count" ]; then
+        echo "WARNING: $file_count files($file_name_pattern) under $folder_dir. More than $warn_count."
+        exit $EXIT_WARN
+    fi
 fi
 
+echo "OK: $file_count files($file_name_pattern) under $folder_dir."
 exit $EXIT_OK
 ## File: check_file_count.sh ends
