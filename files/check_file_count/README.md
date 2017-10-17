@@ -1,3 +1,7 @@
+check_file_count.sh
+==============
+If too many files under a folder, raise an alert.
+
 # How To Use
 ```
 root@dennyzhang.com:/tmp# ls -lth /tmp/*.jpg | wc -l
