@@ -4,7 +4,7 @@
 
 - File me [tickets](https://github.com/DennyZhang/monitoring/issues) or star [the repo](https://github.com/DennyZhang/monitoring)
 
-check_proc_fd
+check_out_of_memory.py
 ==============
 
 - Link: https://www.dennyzhang.com/monitor_oom
