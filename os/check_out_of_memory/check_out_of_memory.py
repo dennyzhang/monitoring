@@ -64,7 +64,12 @@ if __name__ == '__main__':
         sys.exit(NAGIOS_EXIT_ERROR)
 
     oom_list = get_oom_entry()
-    matched_oom_list = filter_entry_by_datetime(oom_list, hours_to_check)
+    
+    if not oom_list:
+      matched_oom_list = filter_entry_by_datetime(oom_list, hours_to_check)
+    else:
+      matched_oom_list = []
+
     if len(matched_oom_list) == 0:
         print("OK: No OOM has happened in previous %d hours." % (hours_to_check))
     else:
